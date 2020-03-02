@@ -12,7 +12,8 @@
 
 a {
     display: block;
-    background: #d0482e url('/resources/icons/expand.png') top 5px right 5px no-repeat;
+    background: #d0482e url('/resources/icons/expand.png') top 5px right 5px
+        no-repeat;
     padding: 12px 34px 12px 24px;
     color: #fff;
     text-decoration: none;
@@ -24,12 +25,12 @@ a.active {
     background-image: url('/resources/icons/collapse.png');
 }
 
-div {
+div.content {
     padding: 20px;
 }
 
 p {
     margin: 0;
     font-size: 12px;
-    color: #6F6F6F;
+    color: #6f6f6f;
 }

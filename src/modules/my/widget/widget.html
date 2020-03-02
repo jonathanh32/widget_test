@@ -2,10 +2,18 @@
     <a href="#" onclick={handleCtaClick} class={ctaClass}>
         {ctaTitle}
     </a>
-    <div if:true={active}>
+    <div class="content" if:true={active}>
         <p>
             Here are some things you can do to get your post featured on the
             homepage:
         </p>
+        <template for:each={tips} for:item="tip">
+            <my-item
+                key={tip.id}
+                text={tip.title}
+                type={tip.type}
+                url={tip.url}
+            ></my-item>
+        </template>
     </div>
 </template>

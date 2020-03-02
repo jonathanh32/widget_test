@@ -1,0 +1,15 @@
+:host {
+    display: block;
+}
+
+.title-guide {
+    background-image: url('/resources/icons/trend.png');
+}
+
+.title-article {
+    background-image: url('/resources/icons/envelope.png');
+}
+
+.title-pdf {
+    background-image: url('/resources/icons/share.png');
+}

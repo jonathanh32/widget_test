@@ -1,0 +1,37 @@
+{
+    "title": "Congrats on launching your product!",
+    "label": "Launch tips",
+    "description": "Here are some things you can do to learn more about Nickelled",
+    "content": [
+        {
+            "id": 1,
+            "type": "Guide",
+            "title": "Invite your team",
+            "url": "https://guides.nickelled.com/invite-team-v2"
+        },
+        {
+            "id": 2,
+            "type": "Guide",
+            "title": "Share a guide",
+            "url": "https://guides.nickelled.com/share-guide-v2"
+        },
+        {
+            "id": 3,
+            "type": "Article",
+            "title": "Edit a guide",
+            "url": "https://guides.nickelled.com/edit-guide-v2.html"
+        },
+        {
+            "id": 4,
+            "type": "Article",
+            "title": "Navigating an organization",
+            "url": "https://guides.nickelled.com/navigating-your-org.html"
+        },
+        {
+            "id": 5,
+            "type": "PDF",
+            "title": "Replace a out of date page",
+            "url": "https://guides.nickelled.com/replace-a-out-of-date-page.pdf"
+        }
+    ]
+}
