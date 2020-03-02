@@ -1,20 +1,49 @@
 import { LightningElement, api } from 'lwc';
-const EXAMPLE_DATA = require('./data.json');
+const API_URL = '/api/data.json';
 
 export default class Widget extends LightningElement {
     @api active = false;
-    data = EXAMPLE_DATA;
+    loaded = false;
+    data = {
+        title: '',
+        label: '',
+        content: []
+    };
+    error;
 
-    get ctaTitle() {
-        return this.active ? 'Congrats on your launch!' : 'Launch tips';
+    // Fire API request - widget will only show when loaded
+    connectedCallback() {
+        fetch(API_URL)
+            .then(res => {
+                return res.json();
+            })
+            .then(json => {
+                this.data = json;
+                this.loaded = true;
+            })
+            .catch(error => {
+                this.error = error;
+            });
     }
 
+    // Title depends on expanded state
+    get ctaTitle() {
+        return this.active ? this.data.title : this.data.label;
+    }
+
+    // Call to action link class should be active if expanded
     get ctaClass() {
         return this.active ? 'active' : null;
     }
 
+    // Return tips array from API
     get tips() {
-        return EXAMPLE_DATA.content;
+        return this.data.content;
+    }
+
+    // Return description from API
+    get description() {
+        return this.data.content;
     }
 
     // Toggle widget on call to action button press

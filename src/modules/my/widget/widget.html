@@ -1,21 +1,23 @@
 <template>
-    <a href="#" onclick={handleCtaClick} class={ctaClass}>
-        {ctaTitle}
-    </a>
-    <div class="content" if:true={active}>
-        <p>
-            Here are some things you can do to get your post featured on the
-            homepage:
-        </p>
-        <template iterator:it={tips}>
-            <div key={it.value.id}>
-                <my-item
-                    text={it.value.title}
-                    type={it.value.type}
-                    url={it.value.url}
-                ></my-item>
-                <div if:false={it.last} class="seperator"></div>
-            </div>
-        </template>
-    </div>
+    <template if:true={loaded}>
+        <a href="#" onclick={handleCtaClick} class={ctaClass}>
+            {ctaTitle}
+        </a>
+        <div class="content" if:true={active}>
+            <p>
+                Here are some things you can do to get your post featured on the
+                homepage:
+            </p>
+            <template iterator:it={tips}>
+                <div key={it.value.id}>
+                    <my-item
+                        text={it.value.title}
+                        type={it.value.type}
+                        url={it.value.url}
+                    ></my-item>
+                    <div if:false={it.last} class="seperator"></div>
+                </div>
+            </template>
+        </div>
+    </template>
 </template>
