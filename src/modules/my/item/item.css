@@ -30,3 +30,7 @@
 .title-pdf {
     background-image: url('/resources/icons/share.png');
 }
+
+.title-visited {
+    text-decoration: line-through;
+}

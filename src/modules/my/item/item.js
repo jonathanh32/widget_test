@@ -7,38 +7,48 @@ export default class Item extends LightningElement {
     @api text;
     @api type;
     @api url;
-    visited = [];
+    visited = false;
 
-    // Get visit data from local storage
+    // Determine if item is visited from localStorage
     connectedCallback() {
-        var visitedString = localStorage.getItem(LOCAL_STORAGE_KEY);
-
-        if (visitedString !== null) {
-            this.visited = visitedString.split(',');
-        }
+        var itemId = this.uid.toString();
+        this.visited = this.visitedSites.indexOf(itemId) !== -1;
     }
 
-    // Title element CSS class depends on item type
+    // Title element CSS class depends on item type and visit state
     get titleClass() {
         var iconName = this.type.toLowerCase();
+        var className = 'title';
 
         if (AVAILABLE_ICONS.indexOf(iconName) >= 0) {
-            return 'title title-' + iconName;
+            className += ' title-' + iconName;
         }
 
-        return 'title title-' + iconName;
+        if (this.visited) {
+            className += ' title-visited';
+        }
+
+        return className;
     }
 
     // Open link, record action in localstorage
-    handleLinkClick(e) {
-        var itemId = e.target.dataset.id;
+    handleLinkClick() {
+        var itemId = this.uid.toString();
+        var arr = this.visitedSites.slice();
 
-        // Update local storage
-        if (this.visited.indexOf(itemId) === -1) {
-            this.visited.push(itemId);
-            localStorage.setItem(LOCAL_STORAGE_KEY, this.visited.join(','));
+        this.visited = true;
+
+        if (arr.indexOf(itemId) === -1) {
+            arr.push(itemId);
+            localStorage.setItem(LOCAL_STORAGE_KEY, arr.join(','));
         }
 
         return true;
+    }
+
+    // Retrieve visited sites from localStorage
+    get visitedSites() {
+        var data = localStorage.getItem(LOCAL_STORAGE_KEY);
+        return data === null ? [] : data.split(',');
     }
 }
