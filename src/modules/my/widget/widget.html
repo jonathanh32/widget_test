@@ -11,6 +11,7 @@
             <template iterator:it={tips}>
                 <div key={it.value.id}>
                     <my-item
+                        uid={it.value.id}
                         text={it.value.title}
                         type={it.value.type}
                         url={it.value.url}
