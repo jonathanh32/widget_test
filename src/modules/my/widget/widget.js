@@ -38,7 +38,11 @@ export default class Widget extends LightningElement {
 
     // Return tips array from API
     get tips() {
-        return this.data.content;
+        return this.data.content.map((val, idx, arr) => {
+            val.showUrl = idx === 0;
+            val.showSeperator = idx < arr.length - 1;
+            return val;
+        });
     }
 
     // Return description from API

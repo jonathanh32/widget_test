@@ -15,8 +15,9 @@
                         text={it.value.title}
                         type={it.value.type}
                         url={it.value.url}
+                        show-url={it.value.showUrl}
                     ></my-item>
-                    <div if:false={it.last} class="seperator"></div>
+                    <div if:true={it.value.showSeperator} class="seperator"></div>
                 </div>
             </template>
         </div>

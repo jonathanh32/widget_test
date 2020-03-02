@@ -7,6 +7,7 @@ export default class Item extends LightningElement {
     @api text;
     @api type;
     @api url;
+    @api showUrl;
     visited = false;
 
     // Determine if item is visited from localStorage

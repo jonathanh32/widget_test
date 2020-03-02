@@ -2,4 +2,5 @@
     <a href={url} target="_BLANK" class={titleClass} onclick={handleLinkClick}
         >{text}</a
     >
+    <a if:true={showUrl} href={url} class="url" onclick={handleLinkClick}>{url}</a>
 </template>
