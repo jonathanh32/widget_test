@@ -40,7 +40,7 @@ export default class Widget extends LightningElement {
     get tips() {
         return this.data.content.map((val, idx, arr) => {
             val.showUrl = idx === 0;
-            val.showSeperator = idx < arr.length - 1;
+            val.showSeperator = idx !== 0 && idx < arr.length - 1;
             return val;
         });
     }

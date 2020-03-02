@@ -24,7 +24,7 @@
     text-decoration: none;
     color: #d86751;
     text-overflow: ellipsis;
-    margin-top: 10px;
+    margin: 10px 0 -10px 0;
 }
 
 .title:hover {
