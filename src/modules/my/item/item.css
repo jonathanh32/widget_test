@@ -1,5 +1,22 @@
 :host {
     display: block;
+    padding: 16px 0;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.title {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    background: url('/resources/icons/trend.png') left no-repeat;
+    padding-left: 28px;
+    font-size: 13px;
+    background-size: 20px;
+}
+
+.title:hover {
+    color: #888;
 }
 
 .title-guide {
@@ -7,7 +24,7 @@
 }
 
 .title-article {
-    background-image: url('/resources/icons/envelope.png');
+    background-image: url('/resources/icons/mail.png');
 }
 
 .title-pdf {

@@ -26,11 +26,15 @@ a.active {
 }
 
 div.content {
-    padding: 20px;
+    margin: 20px;
 }
 
 p {
-    margin: 0;
+    margin: 20px 0 10px 0;
     font-size: 12px;
     color: #6f6f6f;
+}
+
+.seperator {
+    border-bottom: solid 1px #ebebeb;
 }

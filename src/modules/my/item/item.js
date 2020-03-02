@@ -1,5 +1,5 @@
 import { LightningElement, api } from 'lwc';
-const AVAILABLE_ICONS = ['code', 'expand', 'mail', 'plus', 'share', 'trend'];
+const AVAILABLE_ICONS = ['article', 'guide', 'pdf'];
 
 export default class Item extends LightningElement {
     @api text;
@@ -10,10 +10,10 @@ export default class Item extends LightningElement {
     get titleClass() {
         var iconName = this.type.toLowerCase();
 
-        if (AVAILABLE_ICONS.indexOf(iconName) > 0) {
+        if (AVAILABLE_ICONS.indexOf(iconName) >= 0) {
             return 'title title-' + iconName;
         }
 
-        return 'title title-mail';
+        return 'title title-' + iconName;
     }
 }
