@@ -50,13 +50,12 @@ export default class Item extends LightningElement {
     // Retrieve visited sites from localStorage
     get visitedSites() {
         var data = null;
-        
+
         // Gracefully break in the scenario localStorage is not available - e.g. tests
         if (typeof localStorage !== 'undefined') {
             data = localStorage.getItem(LOCAL_STORAGE_KEY);
         }
 
-        
         return data === null ? [] : data.split(',');
     }
 }
