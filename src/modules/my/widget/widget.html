@@ -4,10 +4,7 @@
             {ctaTitle}
         </a>
         <div class="content" if:true={active}>
-            <p>
-                Here are some things you can do to get your post featured on the
-                homepage:
-            </p>
+            <p>{description}</p>
             <template iterator:it={tips}>
                 <div key={it.value.id}>
                     <my-item

@@ -52,7 +52,7 @@ export default class Widget extends LightningElement {
 
     // Return description from API
     get description() {
-        return this.data.content;
+        return this.data.description;
     }
 
     // Toggle widget on call to action button press
