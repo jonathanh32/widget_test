@@ -3,11 +3,11 @@ const AVAILABLE_ICONS = ['article', 'guide', 'pdf'];
 const LOCAL_STORAGE_KEY = 'widget_visited';
 
 export default class Item extends LightningElement {
-    @api uid;
-    @api text;
-    @api type;
-    @api url;
-    @api showUrl;
+    @api uid = 1;
+    @api text = 'Example';
+    @api type = 'Article';
+    @api url = 'https://example.com';
+    @api showUrl = false;
     visited = false;
 
     // Determine if item is visited from localStorage
@@ -49,7 +49,14 @@ export default class Item extends LightningElement {
 
     // Retrieve visited sites from localStorage
     get visitedSites() {
-        var data = localStorage.getItem(LOCAL_STORAGE_KEY);
+        var data = null;
+        
+        // Gracefully break in the scenario localStorage is not available - e.g. tests
+        if (typeof localStorage !== 'undefined') {
+            data = localStorage.getItem(LOCAL_STORAGE_KEY);
+        }
+
+        
         return data === null ? [] : data.split(',');
     }
 }

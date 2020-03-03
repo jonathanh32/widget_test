@@ -13,6 +13,11 @@ export default class Widget extends LightningElement {
 
     // Fire API request - widget will only show when loaded
     connectedCallback() {
+        // Gracefully break in the scenario fetch is not available - e.g. tests
+        if (typeof fetch !== 'function') {
+            return;
+        }
+
         fetch(API_URL)
             .then(res => {
                 return res.json();
